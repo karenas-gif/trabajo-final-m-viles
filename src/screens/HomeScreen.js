@@ -6,29 +6,46 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Bienvenido al Parcial</Text>
-        <Text style={styles.subtitle}>Aplicación de Navegación</Text>
+      <View style={styles.topSection}>
+        <Text style={styles.greeting}>Hola, Estudiante</Text>
+        <Text style={styles.title}>Segundo Parcial</Text>
+        <Text style={styles.subtitle}>Gestiona tu información académica</Text>
       </View>
 
-      <View style={styles.content}>
-        <View style={styles.card}>
-          <Text style={styles.cardTitle}>Información del Parcial</Text>
-          <Text style={styles.cardText}>
-            Esta aplicación demuestra el uso de React Navigation y React Native.
+      <View style={styles.mainContent}>
+        <View style={styles.featureGrid}>
+          <View style={styles.featureBox}>
+            <Text style={styles.featureIcon}>📱</Text>
+            <Text style={styles.featureTitle}>React Native</Text>
+            <Text style={styles.featureDesc}>Desarrollo móvil</Text>
+          </View>
+
+          <View style={styles.featureBox}>
+            <Text style={styles.featureIcon}>⚡</Text>
+            <Text style={styles.featureTitle}>Expo</Text>
+            <Text style={styles.featureDesc}>Framework híbrido</Text>
+          </View>
+        </View>
+
+        <View style={styles.infoBox}>
+          <Text style={styles.infoTitle}>Examen Parcial 2 Corte</Text>
+          <Text style={styles.infoText}>
+            Sistema de navegación implementado con React Navigation. 
+            Desarrollado como parte de la evaluación del curso.
           </Text>
         </View>
 
         <TouchableOpacity 
-          style={styles.button}
+          style={styles.mainButton}
           onPress={() => navigation.navigate('Profile')}
         >
-          <Text style={styles.buttonText}>Ir a Perfil</Text>
+          <Text style={styles.mainButtonText}>Ver Perfil Completo</Text>
+          <Text style={styles.arrow}>→</Text>
         </TouchableOpacity>
-      </View>
 
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>Profe, ponga 5.0</Text>
+        <TouchableOpacity style={styles.secondaryButton}>
+          <Text style={styles.secondaryButtonText}>Documentación</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -37,84 +54,116 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#0f172a',
   },
-  header: {
-    backgroundColor: '#6366f1',
+  topSection: {
+    backgroundColor: '#10b981',
     paddingTop: 60,
-    paddingBottom: 40,
-    paddingHorizontal: 20,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 8,
+    paddingBottom: 50,
+    paddingHorizontal: 24,
+  },
+  greeting: {
+    fontSize: 16,
+    color: '#d1fae5',
+    marginBottom: 8,
+    fontWeight: '500',
   },
   title: {
-    fontSize: 32,
+    fontSize: 36,
     fontWeight: 'bold',
     color: '#ffffff',
-    textAlign: 'center',
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: '#e0e7ff',
+    color: '#d1fae5',
+  },
+  mainContent: {
+    flex: 1,
+    paddingHorizontal: 24,
+    paddingTop: 32,
+  },
+  featureGrid: {
+    flexDirection: 'row',
+    gap: 16,
+    marginBottom: 24,
+  },
+  featureBox: {
+    flex: 1,
+    backgroundColor: '#1e293b',
+    borderRadius: 16,
+    padding: 20,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#334155',
+  },
+  featureIcon: {
+    fontSize: 32,
+    marginBottom: 8,
+  },
+  featureTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#10b981',
+    marginBottom: 4,
+  },
+  featureDesc: {
+    fontSize: 12,
+    color: '#94a3b8',
     textAlign: 'center',
   },
-  content: {
-    flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 40,
-    justifyContent: 'center',
-  },
-  card: {
-    backgroundColor: '#ffffff',
-    borderRadius: 20,
-    padding: 24,
-    marginBottom: 32,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  cardTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#1f2937',
-    marginBottom: 12,
-  },
-  cardText: {
-    fontSize: 15,
-    color: '#6b7280',
-    lineHeight: 22,
-  },
-  button: {
-    backgroundColor: '#6366f1',
-    paddingVertical: 18,
-    paddingHorizontal: 32,
+  infoBox: {
+    backgroundColor: '#1e293b',
     borderRadius: 16,
-    shadowColor: '#6366f1',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 6,
+    padding: 20,
+    marginBottom: 24,
+    borderLeftWidth: 4,
+    borderLeftColor: '#10b981',
   },
-  buttonText: {
-    color: '#ffffff',
+  infoTitle: {
     fontSize: 18,
     fontWeight: '600',
-    textAlign: 'center',
+    color: '#ffffff',
+    marginBottom: 12,
   },
-  footer: {
-    paddingVertical: 20,
-    alignItems: 'center',
-  },
-  footerText: {
+  infoText: {
     fontSize: 14,
-    color: '#9ca3af',
+    color: '#cbd5e1',
+    lineHeight: 20,
+  },
+  mainButton: {
+    backgroundColor: '#10b981',
+    paddingVertical: 18,
+    paddingHorizontal: 24,
+    borderRadius: 12,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  mainButtonText: {
+    color: '#ffffff',
+    fontSize: 17,
+    fontWeight: '600',
+    marginRight: 8,
+  },
+  arrow: {
+    color: '#ffffff',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  secondaryButton: {
+    backgroundColor: 'transparent',
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: '#334155',
+  },
+  secondaryButtonText: {
+    color: '#94a3b8',
+    fontSize: 16,
+    fontWeight: '500',
+    textAlign: 'center',
   },
 });
