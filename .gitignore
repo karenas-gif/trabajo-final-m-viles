@@ -3,6 +3,7 @@
 # dependencies
 node_modules/
 
+.lockb
 # Expo
 .expo/
 dist/
