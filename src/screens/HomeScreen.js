@@ -46,17 +46,11 @@ export default function HomeScreeen() {
           <View style={styles.metaRow}>
             <Text style={styles.metaLabel}>Curso:</Text>
             <Text style={styles.metaValue}>Aplicaciones Móviles</Text>
-            <Text style={styles.metaLabel}>Docente:</Text>
-            <Text style={styles.metaValue}>[Nombre del docente]</Text>
+            
           </View>
         </View>
 
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>Fecha: {new Date().toLocaleDateString()}</Text>
-          <TouchableOpacity style={styles.smallButton} activeOpacity={0.8}>
-            <Text style={styles.smallButtonText}>Ver Demo</Text>
-          </TouchableOpacity>
-        </View>
+        
       </View>
     </SafeAreaView>
   );
